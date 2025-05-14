@@ -4,4 +4,7 @@ function ValidateCreds() {
   {
     alert("Success.")
   }
+  else{
+    alert("Failure")
+  }
 }
