@@ -2,8 +2,8 @@
 <html>
 <body>
 
-Welcome <?php echo $_POST["usr"]; ?><br>
-Your email address is: <?php echo $_POST["pwd"]; ?>
+Welcome <?php echo $_GET["usr"]; ?><br>
+Your email address is: <?php echo $_GET["pwd"]; ?>
 
 </body>
 </html>
