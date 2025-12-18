@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBERATION ARCHIVE - SIGHTINGS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+</head>
+<body>
+    <div class="scanlines"></div>
+    
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <img src="images/liberation_arch_white.webp" alt="Fire icon" class="fire-icon">
+                <h1>🔥 LIBERATION ARCHIVE 🔥</h1>
+                <img src="images/liberation_arch_white.webp" alt="Fire icon" class="fire-icon">
+            </div>
+            <div class="header-sub">
+                <marquee behavior="scroll" direction="left">
+                    ⚠️ ACTIVE SIGHTINGS MAP - REAL-TIME TRACKING ⚠️ &nbsp;&nbsp;|&nbsp;&nbsp; 
+                    <span class="blink">ALERT:</span> Tehran 1978 photos verified &nbsp;&nbsp;|&nbsp;&nbsp;
+                    BURATSOV STATUS: ACTIVE - LAST SEEN 1978
+                </marquee>
+            </div>
+            <div class="visitor-counter">
+                <img src="data:image/gif;base64,R0lGODlhCgAKAIAAAAAAAP///yH5BAAAAAAALAAAAAAKAAoAAAIRhI8Ae6zSUHvOmjgr1TyzzgUAOw==" alt="counter">
+                <span>Visitors since 1997: 12,847</span>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <div class="nav-container">
+            <table class="nav-table" cellpadding="5" cellspacing="0">
+                <tr>
+                    <td><a href="index.html">/HOME/</a></td>
+                    <td><a href="archive.html">/ARCHIVE/</a></td>
+                    <td><a href="prophets.html">/PROPHETS/</a></td>
+                    <td><a href="rituals.html">/RITUALS/</a></td>
+                    <td><a href="sightings.html" class="nav-active">/SIGHTINGS/</a></td>
+                    <td><a href="discussion.html">/DISCUSSION/</a></td>
+                    <td><a href="upload.html">/UPLOAD/</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Sightings Page Content -->
+        <div class="page-content">
+            <h2>📍 SIGHTINGS & ACTIVITY MAP</h2>
+            <p style="color: #cccccc; margin-bottom: 20px;">312 confirmed sightings since 1665. Red markers indicate Buratsov activity.</p>
+            
+            <!-- Map Container -->
+            <div class="map-container">
+                <div class="map-overlay">
+                    <!-- World Map Background -->
+                    <div class="world-map">
+                        <!-- Map points will be positioned absolutely -->
+                        <div class="map-point" style="top: 30%; left: 50%;" data-sighting="leicester" title="Leicester 1817"></div>
+                        <div class="map-point" style="top: 35%; left: 60%;" data-sighting="tehran" title="Tehran 1978"></div>
+                        <div class="map-point" style="top: 40%; left: 55%;" data-sighting="petersburg" title="St. Petersburg 1809"></div>
+                        <div class="map-point" style="top: 38%; left: 48%;" data-sighting="bukhara" title="Bukhara 1682"></div>
+                        <div class="map-point" style="top: 45%; left: 45%;" data-sighting="leipzig" title="Leipzig 1812"></div>
+                        <div class="map-point" style="top: 50%; left: 25%;" data-sighting="boston" title="Boston 1904"></div>
+                        <div class="map-point" style="top: 32%; left: 53%;" data-sighting="london" title="London 1853"></div>
+                    </div>
+                    
+                    <!-- Map Controls -->
+                    <div class="map-controls">
+                        <button id="zoom-in">+</button>
+                        <button id="zoom-out">-</button>
+                        <button id="reset-view">Reset</button>
+                        <div class="map-legend">
+                            <span class="legend-item"><div class="legend-dot" style="background: #ff3300;"></div> Buratsov Sighting</span>
+                            <span class="legend-item"><div class="legend-dot" style="background: #ff9900;"></div> Ritual Activity</span>
+                            <span class="legend-item"><div class="legend-dot" style="background: #6666ff;"></div> Document Source</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sighting Details Panel -->
+            <div class="main-content" style="margin-top: 30px;">
+                <div class="left-column">
+                    <div class="info-box">
+                        <h2>📋 SIGHTING DETAILS</h2>
+                        <div id="sighting-details">
+                            <p style="color: #999; text-align: center;">Click a map point to view details</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h2>📊 SIGHTING STATISTICS</h2>
+                        <table class="stats-table">
+                            <tr>
+                                <td>Total Sightings:</td>
+                                <td><strong>312</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Buratsov Confirmations:</td>
+                                <td><strong>47</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Ritual Activities:</td>
+                                <td><strong>89</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Current Century:</td>
+                                <td><strong>3</strong> (since 2000)</td>
+                            </tr>
+                            <tr>
+                                <td>Longest Gap:</td>
+                                <td><strong>54 years</strong> (1924-1978)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="right-column">
+                    <!-- Recent Sightings List -->
+                    <div class="info-box">
+                        <h2>🕒 RECENT SIGHTINGS</h2>
+                        <div class="sightings-list">
+                            <div class="sighting-item" data-sighting="tehran">
+                                <span class="sighting-date">1978-06-15</span>
+                                <span class="sighting-location">Tehran, Iran</span>
+                                <span class="sighting-type">Buratsov - CONFIRMED</span>
+                                <button class="view-sighting">VIEW</button>
+                            </div>
+                            <div class="sighting-item" data-sighting="london">
+                                <span class="sighting-date">1853-11-22</span>
+                                <span class="sighting-location">London, UK</span>
+                                <span class="sighting-type">Ritual Activity</span>
+                                <button class="view-sighting">VIEW</button>
+                            </div>
+                            <div class="sighting-item" data-sighting="boston">
+                                <span class="sighting-date">1904-11-01</span>
+                                <span class="sighting-location">Boston, USA</span>
+                                <span class="sighting-type">Failed Ascension</span>
+                                <button class="view-sighting">VIEW</button>
+                            </div>
+                            <div class="sighting-item" data-sighting="leipzig">
+                                <span class="sighting-date">1812-08-22</span>
+                                <span class="sighting-location">Leipzig, Germany</span>
+                                <span class="sighting-type">Dimensional Event</span>
+                                <button class="view-sighting">VIEW</button>
+                            </div>
+                            <div class="sighting-item" data-sighting="leicester">
+                                <span class="sighting-date">1817-10-17</span>
+                                <span class="sighting-location">Leicester, UK</span>
+                                <span class="sighting-type">Buratsov Ascension</span>
+                                <button class="view-sighting">VIEW</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Report New Sighting -->
+                    <div class="info-box">
+                        <h2>🚨 REPORT NEW SIGHTING</h2>
+                        <div class="report-form">
+                            <input type="text" placeholder="Location" id="report-location">
+                            <input type="text" placeholder="Date (YYYY-MM-DD)" id="report-date">
+                            <select id="report-type">
+                                <option>Select type...</option>
+                                <option>Buratsov Sighting</option>
+                                <option>Ritual Activity</option>
+                                <option>Anomalous Flame</option>
+                                <option>Document Discovery</option>
+                            </select>
+                            <textarea placeholder="Details of sighting..." rows="3" id="report-details"></textarea>
+                            <div class="form-options">
+                                <label><input type="checkbox" id="report-encrypt"> Encrypt with Nabazov cipher</label>
+                                <label><input type="checkbox" id="report-urgent"> URGENT - Immediate attention</label>
+                            </div>
+                            <button id="submit-report">SUBMIT REPORT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>⏳ Last sighting verified: 2023-11-30 14:22:01 UTC</p>
+                    <p>🔒 Global tracking: ACTIVE (73% coverage)</p>
+                </div>
+                <div class="footer-right">
+                    <p>⚠️ All sightings encrypted with temporal cipher</p>
+                    <p>📞 Report emergencies: sightings@liberation-archive.res</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>LIBERATION ARCHIVE © 1997-2023 | ACCESS RESTRICTED TO AUTHORIZED RESEARCHERS</p>
+                <div class="webring">
+                    [ <a href="rituals.html">« Previous Site</a> | 
+                    <a href="#">HORI Network</a> | 
+                    <a href="discussion.html">Next Site »</a> ]
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="nav.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Sightings page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sighting data
+            const sightings = {
+                leicester: {
+                    title: "Leicester Cathedral Fire (1817)",
+                    date: "October 17, 1817",
+                    location: "Leicester, United Kingdom",
+                    type: "BURATSOV ASCENSION",
+                    status: "CONFIRMED",
+                    description: "The confirmed ascension of Kürschevan Buratsov. Cathedral fire with anomalous thermal properties. Three witnesses reported seeing a tall figure (6'2\") standing at the epicenter before disappearing. No remains found.",
+                    evidence: "Official fire report, 3 witness testimonies, thermal analysis",
+                    hazards: "Temporal distortion reported by investigators"
+                },
+                tehran: {
+                    title: "Tehran Incident (1978)",
+                    date: "June 15, 1978",
+                    location: "Tehran, Iran",
+                    type: "BURATSOV SIGHTING",
+                    status: "CONFIRMED - PHOTOGRAPHIC EVIDENCE",
+                    description: "Most recent confirmed Buratsov sighting. Photograph shows figure matching 1817 description at bazaar. Local reports of 'cold blue flames' preceding sighting. Subject appeared not to have aged in 161 years.",
+                    evidence: "1 photograph, 7 witness interviews, thermal anomalies",
+                    hazards: "Cognitohazard: Viewers report déjà vu"
+                },
+                petersburg: {
+                    title: "St. Petersburg Experiments (1809)",
+                    date: "March 14, 1809",
+                    location: "St. Petersburg, Russia",
+                    type: "RITUAL ACTIVITY",
+                    status: "DOCUMENTED",
+                    description: "Buratsov's early ascension experiments. Three subjects attempted modified Nabazov ritual. Two spontaneous combustions, one survived 47 seconds. Site abandoned after Tsarist authorities investigation.",
+                    evidence: "Laboratory notes, coroner's reports, official inquiry",
+                    hazards: "Residual temporal instability"
+                }
+            };
+            
+            // Map point interactions
+            document.querySelectorAll('.map-point').forEach(point => {
+                point.addEventListener('click', function() {
+                    const sightingId = this.getAttribute('data-sighting');
+                    showSightingDetails(sightingId);
+                    
+                    // Highlight selected point
+                    document.querySelectorAll('.map-point').forEach(p => {
+                        p.style.transform = 'scale(1)';
+                    });
+                    this.style.transform = 'scale(1.5)';
+                });
+            });
+            
+            // Sighting list interactions
+            document.querySelectorAll('.view-sighting').forEach(button => {
+                button.addEventListener('click', function() {
+                    const sightingId = this.closest('.sighting-item').getAttribute('data-sighting');
+                    showSightingDetails(sightingId);
+                    
+                    // Highlight on map
+                    document.querySelectorAll('.map-point').forEach(p => {
+                        p.style.transform = 'scale(1)';
+                        if (p.getAttribute('data-sighting') === sightingId) {
+                            p.style.transform = 'scale(1.5)';
+                        }
+                    });
+                });
+            });
+            
+            // Report submission
+            document.getElementById('submit-report').addEventListener('click', function() {
+                const location = document.getElementById('report-location').value;
+                const date = document.getElementById('report-date').value;
+                const type = document.getElementById('report-type').value;
+                const details = document.getElementById('report-details').value;
+                
+                if (location && date && type !== 'Select type...' && details) {
+                    // Show submission animation
+                    const submitBtn = this;
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'ENCRYPTING...';
+                    submitBtn.disabled = true;
+                    
+                    setTimeout(() => {
+                        submitBtn.textContent = 'TRANSMITTING...';
+                        
+                        setTimeout(() => {
+                            submitBtn.textContent = 'REPORT SUBMITTED';
+                            submitBtn.style.background = '#003300';
+                            
+                            // Clear form
+                            document.getElementById('report-location').value = '';
+                            document.getElementById('report-date').value = '';
+                            document.getElementById('report-type').selectedIndex = 0;
+                            document.getElementById('report-details').value = '';
+                            
+                            // Show confirmation
+                            alert(`Sighting report submitted successfully.\n\nLocation: ${location}\nDate: ${date}\n\nReport encrypted with Nabazov cipher. Awaiting verification.`);
+                            
+                            setTimeout(() => {
+                                submitBtn.textContent = originalText;
+                                submitBtn.style.background = '';
+                                submitBtn.disabled = false;
+                            }, 2000);
+                        }, 1000);
+                    }, 1000);
+                } else {
+                    alert('Please fill all fields before submitting.');
+                }
+            });
+            
+            function showSightingDetails(sightingId) {
+                const sighting = sightings[sightingId] || {
+                    title: "Sighting Data",
+                    date: "Unknown",
+                    location: "Unknown",
+                    type: "UNCLASSIFIED",
+                    status: "PENDING VERIFICATION",
+                    description: "Data unavailable or encrypted.",
+                    evidence: "Classified",
+                    hazards: "Unknown"
+                };
+                
+                const detailsDiv = document.getElementById('sighting-details');
+                detailsDiv.innerHTML = `
+                    <h3 style="color: #ff9900; margin-top: 0;">${sighting.title}</h3>
+                    <table class="sighting-table">
+                        <tr>
+                            <td><strong>Date:</strong></td>
+                            <td>${sighting.date}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Location:</strong></td>
+                            <td>${sighting.location}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Type:</strong></td>
+                            <td><span style="color: #ff3300;">${sighting.type}</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Status:</strong></td>
+                            <td><span style="color: #00cc00;">${sighting.status}</span></td>
+                        </tr>
+                    </table>
+                    <h4 style="color: #cccccc; margin-top: 15px;">Description:</h4>
+                    <p style="color: #999;">${sighting.description}</p>
+                    <h4 style="color: #cccccc;">Evidence:</h4>
+                    <p style="color: #6699ff;">${sighting.evidence}</p>
+                    <h4 style="color: #cccccc;">Hazards:</h4>
+                    <p style="color: #ff6666;">${sighting.hazards}</p>
+                    <button style="margin-top: 15px;">VIEW FULL DOCUMENTATION</button>
+                `;
+            }
+            
+            // Map controls
+            document.getElementById('zoom-in').addEventListener('click', function() {
+                const map = document.querySelector('.world-map');
+                const currentScale = parseFloat(map.style.transform?.replace('scale(', '')?.replace(')', '')) || 1;
+                map.style.transform = `scale(${currentScale * 1.2})`;
+            });
+            
+            document.getElementById('zoom-out').addEventListener('click', function() {
+                const map = document.querySelector('.world-map');
+                const currentScale = parseFloat(map.style.transform?.replace('scale(', '')?.replace(')', '')) || 1;
+                map.style.transform = `scale(${currentScale * 0.8})`;
+            });
+            
+            document.getElementById('reset-view').addEventListener('click', function() {
+                document.querySelector('.world-map').style.transform = 'scale(1)';
+                document.querySelectorAll('.map-point').forEach(p => {
+                    p.style.transform = 'scale(1)';
+                });
+                document.getElementById('sighting-details').innerHTML = 
+                    '<p style="color: #999; text-align: center;">Click a map point to view details</p>';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBERATION ARCHIVE - Document Upload</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+</head>
+<body>
+    <div class="scanlines"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-top">
+                <img src="images/liberation_arch_white.webp" alt="Fire icon" class="fire-icon">
+                <h1>🔥 LIBERATION ARCHIVE 🔥</h1>
+                <img src="images/liberation_arch_white.webp" alt="Fire icon" class="fire-icon">
+            </div>
+            <div class="header-sub">
+                <marquee behavior="scroll" direction="left">
+                    ⚠️ DOCUMENT UPLOAD - VERIFICATION REQUIRED ⚠️ &nbsp;&nbsp;|&nbsp;&nbsp; 
+                    <span class="blink">SECURE UPLOAD PROTOCOL ACTIVE</span> &nbsp;&nbsp;|&nbsp;&nbsp;
+                    ALL FILES ENCRYPTED WITH NABAZOV CIPHER
+                </marquee>
+            </div>
+            <div class="visitor-counter">
+                <img src="data:image/gif;base64,R0lGODlhCgAKAIAAAAAAAP///yH5BAAAAAAALAAAAAAKAAoAAAIRhI8Ae6zSUHvOmjgr1TyzzgUAOw==" alt="counter">
+                <span>Uploads this month: 42</span>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <div class="nav-container">
+            <table class="nav-table" cellpadding="5" cellspacing="0">
+                <tr>
+                    <td><a href="index.html">/HOME/</a></td>
+                    <td><a href="archive.html">/ARCHIVE/</a></td>
+                    <td><a href="prophets.html">/PROPHETS/</a></td>
+                    <td><a href="rituals.html">/RITUALS/</a></td>
+                    <td><a href="sightings.html">/SIGHTINGS/</a></td>
+                    <td><a href="discussion.html">/DISCUSSION/</a></td>
+                    <td><a href="upload.html" class="nav-active">/UPLOAD/</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="full-width">
+                <h2>⬆️ DOCUMENT UPLOAD</h2>
+                <p class="subtitle">Submit research findings, evidence, and documentation for archival</p>
+                
+                <div class="upload-warning">
+                    <h3>⚠️ UPLOAD REQUIREMENTS</h3>
+                    <ul>
+                        <li>All documents must be relevant to Liberation research</li>
+                        <li>Maximum file size: 100MB per document</li>
+                        <li>Accepted formats: .txt, .pdf, .jpg, .png, .doc, .rtf</li>
+                        <li>All files automatically encrypted with Nabazov cipher</li>
+                        <li>False or misleading submissions will result in access revocation</li>
+                    </ul>
+                </div>
+                
+                <!-- Upload Form -->
+                <div class="upload-form">
+                    <h3>📁 UPLOAD DOCUMENTS</h3>
+                    
+                    <div class="upload-section">
+                        <div class="file-upload">
+                            <h4>1. SELECT FILES</h4>
+                            <div class="drop-zone" id="dropZone">
+                                <p>📂 Drag files here or click to browse</p>
+                                <p class="drop-note">Maximum 5 files, 100MB each</p>
+                                <input type="file" id="fileInput" multiple style="display: none;">
+                                <button onclick="document.getElementById('fileInput').click()">BROWSE FILES</button>
+                            </div>
+                            <div id="fileList" class="file-list">
+                                <!-- Files will appear here -->
+                            </div>
+                        </div>
+                        
+                        <div class="upload-details">
+                            <h4>2. DOCUMENT DETAILS</h4>
+                            <div class="detail-form">
+                                <div class="form-group">
+                                    <label>Document Title *</label>
+                                    <input type="text" id="docTitle" placeholder="e.g., Leicester Cathedral Fire Analysis">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Category *</label>
+                                    <select id="docCategory">
+                                        <option value="">Select category</option>
+                                        <option value="rituals">Ritual Documentation</option>
+                                        <option value="prophets">Prophet Research</option>
+                                        <option value="sightings">Sighting Reports</option>
+                                        <option value="theology">Theological Analysis</option>
+                                        <option value="historical">Historical Records</option>
+                                        <option value="scientific">Scientific Analysis</option>
+                                        <option value="correspondence">Correspondence</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Clearance Level Required *</label>
+                                    <select id="docClearance">
+                                        <option value="1">Level 1 - Basic</option>
+                                        <option value="2">Level 2 - Standard</option>
+                                        <option value="3" selected>Level 3 - Research (Default)</option>
+                                        <option value="4">Level 4 - Restricted</option>
+                                        <option value="5">Level 5 - Top Secret</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Description *</label>
+                                    <textarea id="docDescription" rows="4" placeholder="Detailed description of document contents, origin, and significance..."></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Source / Origin</label>
+                                    <input type="text" id="docSource" placeholder="e.g., Field research, Archive discovery, Witness testimony">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Encryption Level</label>
+                                    <div class="encryption-options">
+                                        <label><input type="radio" name="encryption" value="standard" checked> Standard Nabazov Cipher</label>
+                                        <label><input type="radio" name="encryption" value="enhanced"> Enhanced Encryption (Level 4+)</label>
+                                        <label><input type="radio" name="encryption" value="maximum"> Maximum Security (Level 5 only)</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Additional Notes</label>
+                                    <textarea id="docNotes" rows="2" placeholder="Any additional information for archivists..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Uploader Information -->
+                    <div class="uploader-info">
+                        <h4>3. UPLOADER INFORMATION</h4>
+                        <div class="uploader-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Researcher ID *</label>
+                                    <input type="text" id="researcherId" placeholder="e.g., RES-042">
+                                </div>
+                                <div class="form-group">
+                                    <label>Clearance Level *</label>
+                                    <input type="text" id="uploaderClearance" value="Level 3" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Upload Purpose *</label>
+                                <select id="uploadPurpose">
+                                    <option value="research">Research Contribution</option>
+                                    <option value="evidence">Evidence Submission</option>
+                                    <option value="analysis">Analysis Report</option>
+                                    <option value="translation">Translation Work</option>
+                                    <option value="discovery">New Discovery</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Verification -->
+                    <div class="verification">
+                        <h4>4. VERIFICATION & SUBMISSION</h4>
+                        <div class="verification-checks">
+                            <label><input type="checkbox" id="verify1"> I confirm this document is relevant to Liberation research</label>
+                            <label><input type="checkbox" id="verify2"> I have proper authorization to share this material</label>
+                            <label><input type="checkbox" id="verify3"> I understand this document will be encrypted and archived</label>
+                            <label><input type="checkbox" id="verify4"> I agree to the Archive Terms of Service</label>
+                            <label><input type="checkbox" id="verify5"> I confirm that this document has been checked according to our <a href="">validity policy</a>.</label>
+                        </div>
+                        
+                        <div class="submit-section">
+                            <button id="submitUpload" class="submit-btn">SUBMIT FOR ARCHIVING</button>
+                            <button id="encryptUpload" class="encrypt-btn">ENCRYPT & SUBMIT</button>
+                            <button id="cancelUpload" class="cancel-btn">CANCEL</button>
+                            <p class="submit-note">Submission may take several minutes. Do not close this page during encryption.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Uploads -->
+                <div class="recent-uploads">
+                    <h3>📥 RECENT UPLOADS</h3>
+                    <table class="uploads-table" cellpadding="8" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Document</th>
+                                <th>Uploader</th>
+                                <th>Status</th>
+                                <th>Size</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023-12-15</td>
+                                <td>Leicester Cathedral Fire Report (1817).txt</td>
+                                <td>RES-023</td>
+                                <td class="status-verified">Verified</td>
+                                <td>2.4 MB</td>
+                            </tr>
+                            <tr>
+                                <td>2023-12-14</td>
+                                <td>Buratsov Journal Analysis.pdf</td>
+                                <td>Dr. Armitage</td>
+                                <td class="status-pending">Pending Review</td>
+                                <td>15.7 MB</td>
+                            </tr>
+                            <tr>
+                                <td>2023-12-13</td>
+                                <td>Thermal Signature Study (Edinburgh).zip</td>
+                                <td>RES-042</td>
+                                <td class="status-processing">Processing</td>
+                                <td>48.2 MB</td>
+                            </tr>
+                            <tr>
+                                <td>2023-12-12</td>
+                                <td>Nabazov Translation Notes.rtf</td>
+                                <td>RES-017</td>
+                                <td class="status-verified">Verified</td>
+                                <td>3.1 MB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Upload Statistics -->
+                <div class="upload-stats">
+                    <h3>📊 UPLOAD STATISTICS</h3>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <h4>2,847</h4>
+                            <p>Total documents archived</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>147 GB</h4>
+                            <p>Total archive size</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>42</h4>
+                            <p>Uploads this month</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>94.7%</h4>
+                            <p>Verification success rate</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="upload-final-warning">
+                    <p>⚠️ <strong>FINAL WARNING:</strong> All uploads are permanently logged and encrypted. Attempting to upload malicious, false, or unauthorized material will result in immediate access termination and may lead to further disciplinary action. The flame reveals all truth.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>⏳ Last upload: 2023-12-15 22:31 UTC</p>
+                    <p>🔒 Upload encryption: Nabazov Cipher v2.4 active</p>
+                </div>
+                <div class="footer-right">
+                    <p>⚠️ All uploads subject to verification</p>
+                    <p>📞 Upload support: upload@liberation-archive.res</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>LIBERATION ARCHIVE © 1997-2023 | DOCUMENT UPLOAD - SECURE</p>
+                <div class="webring">
+                    [ <a href="discussion.html">« Discussion</a> | 
+                    <a href="index.html">Home</a> | 
+                    <a href="archive.html">Archive »</a> ]
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="pages/upload.js"></script>
+</body>
+</html>

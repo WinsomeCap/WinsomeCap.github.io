@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBERATION ARCHIVE - Document Archive</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+</head>
+<body>
+    <div class="scanlines"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-top">
+                <img src="images/liberation_arch_white.webp" alt="Fire icon" class="fire-icon">
+                <h1>🔥 LIBERATION ARCHIVE 🔥</h1>
+                <img src="images/liberation_arch_white.webp" alt="Fire icon" class="fire-icon">
+            </div>
+            <div class="header-sub">
+                <marquee behavior="scroll" direction="left">
+                    ⚠️ RESTRICTED ACCESS - CLEARANCE LEVEL 3 REQUIRED ⚠️ &nbsp;&nbsp;|&nbsp;&nbsp; 
+                    <span class="blink">DOCUMENT ARCHIVE</span> - External file system active &nbsp;&nbsp;|&nbsp;&nbsp;
+                    LAST SYNC: Today 04:32 UTC
+                </marquee>
+            </div>
+            <div class="visitor-counter">
+                <img src="data:image/gif;base64,R0lGODlhCgAKAIAAAAAAAP///yH5BAAAAAAALAAAAAAKAAoAAAIRhI8Ae6zSUHvOmjgr1TyzzgUAOw==" alt="counter">
+                <span>External documents: 12 files</span>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <div class="nav-container">
+            <table class="nav-table" cellpadding="5" cellspacing="0">
+                <tr>
+                    <td><a href="index.html">/HOME/</a></td>
+                    <td><a href="archive.html" class="nav-active">/ARCHIVE/</a></td>
+                    <td><a href="prophets.html">/PROPHETS/</a></td>
+                    <td><a href="rituals.html">/RITUALS/</a></td>
+                    <td><a href="sightings.html">/SIGHTINGS/</a></td>
+                    <td><a href="discussion.html">/DISCUSSION/</a></td>
+                    <td><a href="upload.html">/UPLOAD/</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="full-width">
+                <h2>📁 DOCUMENT ARCHIVE</h2>
+                <p class="subtitle">External document files - Editable in your file system</p>
+                
+                <div class="file-system-info">
+                    <h3>📂 EXTERNAL FILE SYSTEM ACTIVE</h3>
+                    <p>Documents are now loaded from separate <code>.txt</code> files in the <code>/documents/</code> folder.</p>
+                    <p>You can edit these files directly in your file system and changes will appear here.</p>
+                    <div class="file-system-stats">
+                        <p><strong>Folder:</strong> <code>/documents/</code></p>
+                        <p><strong>Format:</strong> Plain text (.txt) files</p>
+                        <p><strong>Last scan:</strong> <span id="lastScanTime">Loading...</span></p>
+                    </div>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" placeholder="Search documents..." id="archiveSearch">
+                    <button onclick="searchArchive()">SEARCH</button>
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="core">Core Texts</option>
+                        <option value="rituals">Rituals</option>
+                        <option value="history">Historical Records</option>
+                        <option value="analysis">Modern Analysis</option>
+                    </select>
+                </div>
+                
+                <div class="archive-stats">
+                    <p>📊 <strong>Archive Statistics:</strong> <span id="docCount">12</span> external documents | Last sync: <span id="syncTime">Just now</span></p>
+                </div>
+                
+                <div class="document-categories">
+                    <!-- Category 1: Core Texts -->
+                    <div class="category" data-category="core">
+                        <h3>📚 CORE TEXTS & MANUSCRIPTS</h3>
+                        <div class="doc-grid">
+                            <div class="doc-item" data-file="nabazov_codex.txt" data-clearance="5">
+                                <div class="doc-icon">📜</div>
+                                <div class="doc-info">
+                                    <h4>The Nabazov Codex (1682)</h4>
+                                    <p class="doc-meta">Original Uzbek manuscript | Clearance: Level 5</p>
+                                    <p class="doc-desc">Complete ascension ritual transcription. Contains cognitohazardous material.</p>
+                                    <button class="view-doc" data-filename="nabazov_codex.txt">VIEW</button>
+                                    <button class="edit-doc" data-filename="nabazov_codex.txt">EDIT</button>
+                                    <span class="file-size">Size: <span class="size-value">Loading...</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="doc-item" data-file="buratsov_journal.txt" data-clearance="4">
+                                <div class="doc-icon">📖</div>
+                                <div class="doc-info">
+                                    <h4>Buratsov's Journal (1795-1817)</h4>
+                                    <p class="doc-meta">Personal journals | Clearance: Level 4</p>
+                                    <p class="doc-desc">Complete 22-year journal of the Final Prophet. Russian/French/German.</p>
+                                    <button class="view-doc" data-filename="buratsov_journal.txt">VIEW</button>
+                                    <button class="edit-doc" data-filename="buratsov_journal.txt">EDIT</button>
+                                    <span class="file-size">Size: <span class="size-value">Loading...</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 2: Ritual Documentation -->
+                    <div class="category" data-category="rituals">
+                        <h3>🔥 RITUAL DOCUMENTATION</h3>
+                        <div class="doc-grid">
+                            <div class="doc-item" data-file="flame_cleansing_protocols.txt" data-clearance="3">
+                                <div class="doc-icon">📄</div>
+                                <div class="doc-info">
+                                    <h4>Flame Cleansing Protocols</h4>
+                                    <p class="doc-meta">Procedural manual | Clearance: Level 3</p>
+                                    <p class="doc-desc">Step-by-step purification rituals. Updated 1815 by Buratsov.</p>
+                                    <button class="view-doc" data-filename="flame_cleansing_protocols.txt">VIEW</button>
+                                    <button class="edit-doc" data-filename="flame_cleansing_protocols.txt">EDIT</button>
+                                    <span class="file-size">Size: <span class="size-value">Loading...</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="doc-item" data-file="ascension_ritual_7.txt" data-clearance="5">
+                                <div class="doc-icon">📄</div>
+                                <div class="doc-info">
+                                    <h4>Ascension Ritual #7 Transcript</h4>
+                                    <p class="doc-meta">Ritual transcription | Clearance: Level 5</p>
+                                    <p class="doc-desc">The complete Leicester Cathedral ritual. Warning: High risk.</p>
+                                    <button class="view-doc" data-filename="ascension_ritual_7.txt">VIEW</button>
+                                    <button class="edit-doc" data-filename="ascension_ritual_7.txt">EDIT</button>
+                                    <span class="file-size">Size: <span class="size-value">Loading...</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="doc-item" data-file="ash_baptism_ritual.txt" data-clearance="2">
+                                <div class="doc-icon">📄</div>
+                                <div class="doc-info">
+                                    <h4>Ash Baptism Ritual</h4>
+                                    <p class="doc-meta">Initiation ritual | Clearance: Level 2</p>
+                                    <p class="doc-desc">Standard initiation ceremony for new Liberation members.</p>
+                                    <button class="view-doc" data-filename="ash_baptism_ritual.txt">VIEW</button>
+                                    <button class="edit-doc" data-filename="ash_baptism_ritual.txt">EDIT</button>
+                                    <span class="file-size">Size: <span class="size-value">Loading...</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 3: Historical Records -->
+                    <div class="category" data-category="history">
+                        <h3>📜 HISTORICAL RECORDS</h3>
+                        <div class="doc-grid">
+                            <div class="doc-item" data-file="leicester_cathedral_fire_1817.txt" data-clearance="3">
+                                <div class="doc-icon">📑</div>
+                                <div class="doc-info">
+                                    <h4>Leicester Cathedral Fire (1817)</h4>
+                                    <p class="doc-meta">Official report | Clearance: Level 3</p>
+                                    <p class="doc-desc">Complete eyewitness accounts and analysis.</p>
+                                    <button class="view-doc" data-filename="leicester_cathedral_fire_1817.txt">VIEW</button>
+                                    <button class="edit-doc" data-filename="leicester_cathedral_fire_1817.txt">EDIT</button>
+                                    <span class="file-size">Size: <span class="size-value">Loading...</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="doc-item" data-file="st_petersburg_circle_records.txt" data-clearance="3">
+                                <div class="doc-icon">📑</div>
+                                <div class="doc-info">
+                                    <h4>St. Petersburg Circle Records</h4>
+                                    <p class="doc-meta">Membership lists | Clearance: Level 3</p>
+                                    <p class="doc-desc">Complete records of the 1795-1809 occult circle.</p>
+                                    <button class="view-doc" data-filename="st_petersburg_circle_records.txt">VIEW</button>
+                                    <button class="edit-doc" data-filename="st_petersburg_circle_records.txt">EDIT</button>
+                                    <span class="file-size">Size: <span class="size-value">Loading...</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="doc-item" data-file="correspondence_buratsov_linz.txt" data-clearance="4">
+                                <div class="doc-icon">📑</div>
+                                <div class="doc-info">
+                                    <h4>Correspondence: Buratsov-Linz (1802-1816)</h4>
+                                    <p class="doc-meta">Private letters | Clearance: Level 4</p>
+                                    <p class="doc-desc">14 years of correspondence between Buratsov and Dr. Johann Linz.</p>
+                                    <button class="view-doc" data-filename="correspondence_buratsov_linz.txt">VIEW</button>
+                                    <button class="edit-doc" data-filename="correspondence_buratsov_linz.txt">EDIT</button>
+                                    <span class="file-size">Size: <span class="size-value">Loading...</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 4: Modern Analysis -->
+                    <div class="category" data-category="analysis">
+                        <h3>🔬 MODERN ANALYSIS</h3>
+                        <div class="doc-grid">
+                            <div class="doc-item" data-file="thermal_pattern_analysis.txt" data-clearance="3">
+                                <div class="doc-icon">📊</div>
+                                <div class="doc-info">
+                                    <h4>Thermal Pattern Analysis</h4>
+                                    <p class="doc-meta">Scientific report | Clearance: Level 3</p>
+                                    <p class="doc-desc">Analysis of ritual site thermal signatures.</p>
+                                    <button class="view-doc" data-filename="thermal_pattern_analysis.txt">VIEW</button>
+                                    <button class="edit-doc" data-filename="thermal_pattern_analysis.txt">EDIT</button>
+                                    <span class="file-size">Size: <span class="size-value">Loading...</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="doc-item" data-file="cognitohazard_study_2022.txt" data-clearance="4">
+                                <div class="doc-icon">📊</div>
+                                <div class="doc-info">
+                                    <h4>Cognitohazard Study (2022)</h4>
+                                    <p class="doc-meta">Research paper | Clearance: Level 4</p>
+                                    <p class="doc-desc">Effects of Nabazov texts on human cognition.</p>
+                                    <button class="view-doc" data-filename="cognitohazard_study_2022.txt">VIEW</button>
+                                    <button class="edit-doc" data-filename="cognitohazard_study_2022.txt">EDIT</button>
+                                    <span class="file-size">Size: <span class="size-value">Loading...</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="doc-item" data-file="multiverse_theory_nabazov.txt" data-clearance="4">
+                                <div class="doc-icon">📊</div>
+                                <div class="doc-info">
+                                    <h4>Multiverse Theory - Nabazov</h4>
+                                    <p class="doc-meta">Theoretical paper | Clearance: Level 4</p>
+                                    <p class="doc-desc">Analysis of Nabazov's multidimensional ascension theories.</p>
+                                    <button class="view-doc" data-filename="multiverse_theory_nabazov.txt">VIEW</button>
+                                    <button class="edit-doc" data-filename="multiverse_theory_nabazov.txt">EDIT</button>
+                                    <span class="file-size">Size: <span class="size-value">Loading...</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- File Management Section -->
+                <div class="file-management">
+                    <h3>⚙️ FILE MANAGEMENT</h3>
+                    <div class="management-tools">
+                        <button id="refreshFiles" class="tool-btn">🔄 REFRESH FILES</button>
+                        <button id="createNewDoc" class="tool-btn">📝 CREATE NEW DOCUMENT</button>
+                        <button id="openFolder" class="tool-btn">📂 OPEN DOCUMENTS FOLDER</button>
+                        <button id="exportAll" class="tool-btn">💾 EXPORT ALL DOCUMENTS</button>
+                    </div>
+                    <p class="management-note">Note: Documents are stored in <code>/documents/</code> folder. Edit files with any text editor.</p>
+                </div>
+                
+                <div class="archive-warning">
+                    <p>⚠️ <strong>EXTERNAL FILE SYSTEM:</strong> Documents are loaded from external <code>.txt</code> files. Changes made to files will appear here after refresh. Ensure proper security clearance before editing sensitive documents.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>⏳ Archive last scanned: <span id="footerScanTime">Loading...</span></p>
+                    <p>🔒 External file monitoring active</p>
+                </div>
+                <div class="footer-right">
+                    <p>⚠️ Document integrity checks: <span id="integrityStatus" class="status-ok">PASSING</span></p>
+                    <p>📞 File system support: files@liberation-archive.res</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>LIBERATION ARCHIVE © 1997-2023 | EXTERNAL DOCUMENT SYSTEM</p>
+                <div class="webring">
+                    [ <a href="index.html">« Home</a> | 
+                    <a href="prophets.html">Prophets</a> | 
+                    <a href="discussion.html">Discussion »</a> ]
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Document Editor Modal (hidden by default) -->
+    <div id="documentEditor" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="editorTitle">EDIT DOCUMENT</h3>
+                <button id="closeEditor" class="close-btn">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="editor-info">
+                    <p>Editing: <strong id="editingFilename"></strong></p>
+                    <p>Path: <code id="editingPath"></code></p>
+                    <p>Last modified: <span id="editingModified">Unknown</span></p>
+                </div>
+                <div class="editor-controls">
+                    <button id="saveDocument" class="editor-btn save-btn">💾 SAVE</button>
+                    <button id="revertDocument" class="editor-btn revert-btn">↩️ REVERT</button>
+                    <button id="encryptDocument" class="editor-btn encrypt-btn">🔒 ENCRYPT</button>
+                    <button id="decryptDocument" class="editor-btn decrypt-btn">🔓 DECRYPT</button>
+                </div>
+                <textarea id="editorContent" rows="20" placeholder="Document content..."></textarea>
+                <div class="editor-stats">
+                    <span>Characters: <span id="charCount">0</span></span>
+                    <span>Lines: <span id="lineCount">0</span></span>
+                    <span>Words: <span id="wordCount">0</span></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p class="editor-warning">⚠️ Changes are saved to the external file system. Backup original files before editing.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="pages/archive.js"></script>
+</body>
+</html>
